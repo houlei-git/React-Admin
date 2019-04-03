@@ -1,13 +1,19 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
-import {Button} from 'antd'
+import {BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
+
+import Login from './pages/login/login'
+import Admin from './pages/admin/admin'
+
 export default class App extends Component {
 
   render() {
     return (
-     <div>
-       <Button type='primary'>测试</Button>
-     </div>
+      <Router>
+        <Switch>
+          <Route path='/'component={Login}/>
+          <Route path='/admin'component={Admin}/>
+        </Switch>
+      </Router>
     )
   }
 }
